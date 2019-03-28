@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>使用hugo在github上搭建博客 - heyb7&#39;s blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="heyb7" />
+  <meta name="description" content="本文是在windows 10上面使用hugo在github上面搭建个人博客的方法。 什么是Hugo Hugo是一个开源的静态网站生成器，很适合用来" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="https://github.com/heyb7/heyb7.github.io/post/%E4%BD%BF%E7%94%A8hugo%E5%9C%A8github%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<link rel="icon" href="/heyb7/heyb7.github.io/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/heyb7/heyb7.github.io/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="使用hugo在github上搭建博客" />
+<meta property="og:description" content="本文是在windows 10上面使用hugo在github上面搭建个人博客的方法。 什么是Hugo Hugo是一个开源的静态网站生成器，很适合用来" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://github.com/heyb7/heyb7.github.io/post/%E4%BD%BF%E7%94%A8hugo%E5%9C%A8github%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" />
+<meta property="article:published_time" content="2019-03-28T13:24:04&#43;08:00"/>
+<meta property="article:modified_time" content="2019-03-28T13:24:04&#43;08:00"/>
+
+<meta itemprop="name" content="使用hugo在github上搭建博客">
+<meta itemprop="description" content="本文是在windows 10上面使用hugo在github上面搭建个人博客的方法。 什么是Hugo Hugo是一个开源的静态网站生成器，很适合用来">
+
+
+<meta itemprop="datePublished" content="2019-03-28T13:24:04&#43;08:00" />
+<meta itemprop="dateModified" content="2019-03-28T13:24:04&#43;08:00" />
+<meta itemprop="wordCount" content="1935">
+
+
+
+<meta itemprop="keywords" content="hugo,blog," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用hugo在github上搭建博客"/>
+<meta name="twitter:description" content="本文是在windows 10上面使用hugo在github上面搭建个人博客的方法。 什么是Hugo Hugo是一个开源的静态网站生成器，很适合用来"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/heyb7/heyb7.github.io/" class="logo">heyb7</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/heyb7/heyb7.github.io/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/heyb7/heyb7.github.io/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/heyb7/heyb7.github.io/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/heyb7/heyb7.github.io/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://gohugo.io" rel="noopener" target="_blank">
+              external-link
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/heyb7/heyb7.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/heyb7/heyb7.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/heyb7/heyb7.github.io/" class="logo">
+    
+      heyb7
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/heyb7/heyb7.github.io/">Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/heyb7/heyb7.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/heyb7/heyb7.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/heyb7/heyb7.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://gohugo.io" rel="noopener" target="_blank">
+              external-link
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用hugo在github上搭建博客</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-03-28" class="post-time">
+          2019-03-28
+        </time>
+        
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#什么是hugo">什么是Hugo</a></li>
+<li><a href="#装备工作">装备工作</a></li>
+<li><a href="#安装hugo">安装Hugo</a></li>
+<li><a href="#使用hugo建立网站数据">使用hugo建立网站数据</a></li>
+<li><a href="#测试新下载的主题">测试新下载的主题</a></li>
+<li><a href="#发布到github">发布到github</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>本文是在windows 10上面使用hugo在github上面搭建个人博客的方法。</p>
+
+<h1 id="什么是hugo">什么是Hugo</h1>
+
+<p>Hugo是一个开源的静态网站生成器，很适合用来搭建个人博客，而且支持Markdown语法。关于Hugo的更多信息，请看<a href="https://gohugo.io/">这里</a>.</p>
+
+<h1 id="装备工作">装备工作</h1>
+
+<ol>
+<li>安装git<br />
+从[git官网]()下载对应的安装包。然后直接安装即可。</li>
+<li>安装hugo<br />
+从[Hugo的github仓库]()下载最新版本的安装包（当前最新的包是hugo_extended_0.54.0_Windows-64bit.zip），记得要下载extended版本的，不然在使用主题的时候会报错。</li>
+</ol>
+
+<h1 id="安装hugo">安装Hugo</h1>
+
+<p>假如把hugo安装到D:\hugo目录下，先在D盘下新建hugo目录，然后在hugo目录下再新建2个目录，bin和sites。目录结构如下：</p>
+
+<pre><code>D:\hugo
+├─bin
+└─sites
+</code></pre>
+
+<p>把下载的hugo压缩包直接解压到bin目录下，然后把D:\hugo\bin路径添加到系统的PATH变量中。<br />
+验证hugo是否安装成功，在新打开的cmder中输入 hugo version,显示下面的信息说明hugo安装成功了，如果出现 hugo: command not found，请检查PATH环境变量。</p>
+
+<pre><code>Hugo Static Site Generator v0.54.0/extended windows/amd64 BuildDate: unknown
+</code></pre>
+
+<h1 id="使用hugo建立网站数据">使用hugo建立网站数据</h1>
+
+<ol>
+<li><p>首先建立网站的数据目录结构</p>
+
+<pre><code>cd D:\hugo\sites
+hugo new site myblog   # myblog是网站数据的目录，名字可以任意
+</code></pre>
+
+<p>这时进入sites目录，将会看到新生成的myblog目录，目录结构如下：</p>
+
+<pre><code>D:\HUGO\SITES\MYBLOG
+│  config.toml
+│
+├─archetypes
+│      default.md
+│
+├─content
+├─data
+├─layouts
+├─static
+└─themes
+</code></pre>
+
+<p>archetypes目录里可以放一些原型，用于hugo新建内容的配置属性。config.toml是网站的配置属性文件。content目录里放你网站的内容，例如你发布的博客文章。data目录是hugo使用的配置文件存放的地方。layout目录存放布局内容。static目录存放静态资源如图片、css等。themes目录存放hugo主题。</p></li>
+
+<li><p>创建博客页面</p>
+
+<pre><code>cd myblog
+hugo new post/first_blog.md
+</code></pre>
+
+<p>上面命令会在content目录下新生成一个post目录，在post目录下新生成一个first_blog.md文件。这个文件就是一个页面文件。打开md文件，里面已经自动生成了一些内容：</p>
+
+<pre><code>---
+title: &quot;Firest_blog&quot;
+date: 2019-03-28T14:35:12+08:00
+draft: true
+---
+</code></pre>
+
+<p>&mdash;里面的是一些配置信息，默认只生成这3项，可以自己在添加一些：</p>
+
+<pre><code>---
+title: &quot;Firest_blog&quot;
+date: 2019-03-28T14:35:12+08:00
+draft: false
+tags: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot;]
+---
+</code></pre>
+
+<p>其中title是博客文章的名字，date是时间，draft是true时不发布文章，要发布文章的话需要改成false。tags是文章的标签，可以添加多个，以逗号隔开。
+这时可以往新生成的md文件中加入以下markdown格式的内容。</p></li>
+
+<li><p>下载hugo主题<br />
+hugo提供了很多主题，自己可以去<a href="https://themes.gohugo.io/">Hugo主题网站</a>挑选一个自己喜欢的主题。我选择的主题是<a href="https://themes.gohugo.io/hugo-theme-jane/">jane</a>。然后下载主题：</p>
+
+<pre><code>cd myblog
+git clone https://github.com/xianmin/hugo-theme-jane.git themes/jane
+</code></pre>
+
+<p>这时主题将会下载到themes的jane目录中。</p></li>
+</ol>
+
+<h1 id="测试新下载的主题">测试新下载的主题</h1>
+
+<ul>
+<li><p>把新下载主题中的配置文件(config.toml)复制到myblog的根目录下：</p>
+
+<pre><code>cd myblog
+cp themes/jane/exampleSite/config.toml ./
+</code></pre>
+
+<p>配置文件(config.toml)是静态网站的一些配置信息，其中的内容可以自己看一下，里面有详细的描述。如果要发布到github中，必须把配置文件中的 <strong>baseURL</strong>设置成<strong>&ldquo;https://用户名.github.io/&rdquo;</strong>。
+启动Hugo自带的服务器来测试：</p>
+
+<pre><code>cd myblog
+hugo server
+</code></pre></li>
+
+<li><p>如果上面没有复制主题的配置文件到myblog根目录下，也可以这样来启动hugo服务：</p>
+
+<pre><code>hugo server -t jane   # jane是themes中的主题名字
+</code></pre>
+
+<p>其中-t是指明使用那个主题，后面跟主题的名字。这种方式可以方面我们测试不同主题的效果，省去了频繁拷贝主题的配置文件到myblog根目录下。</p></li>
+
+<li><p>hugo服务器启动后，在浏览器中输入：<a href="http://127.0.0.1:1313就可以看到效果。">http://127.0.0.1:1313就可以看到效果。</a></p></li>
+</ul>
+
+<h1 id="发布到github">发布到github</h1>
+
+<ol>
+<li>首先要有github的账号，然后在github上创建一个新的仓库。仓库的名字必须是  <strong>用户名.github.io</strong>。记得把myblog目录下配置文件中的 <strong>baseURL</strong>改成<strong>&ldquo;https://用户名.github.io/&rdquo;</strong>。</li>
+
+<li><p>发布前先执行如下命令使用hugo进行编译：</p>
+
+<pre><code>cd myblog
+hugo
+</code></pre>
+
+<p>如果没有配置好myblog下的配置文件可以用下面的命令：</p>
+
+<pre><code>hugo --theme jane --baseURL &quot;https://用户名.github.io&quot;
+</code></pre>
+
+<p>hugo将编译好的文件输出到myblog的public目录中，public目录中的文件就是我们要正式发布的站点数据。</p></li>
+
+<li><p>发布</p>
+
+<pre><code>cd public
+git init
+git add .
+git commit -m &quot;commit info&quot;
+git remote add origin https://github.com/用户名/用户名.github.io.git
+git push origin master
+</code></pre>
+
+<p>git push的时候会要求输入github的用户名和密码。push之后就可以通过浏览器访问自己的博客站点了。</p></li>
+</ol>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">heyb7</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-03-28</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://github.com/heyb7/heyb7.github.io/tags/hugo/">hugo</a>
+          <a href="https://github.com/heyb7/heyb7.github.io/tags/blog/">blog</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+    
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="https://github.com/heyb7/heyb7.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        heyb7
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/heyb7/heyb7.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/heyb7/heyb7.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/heyb7/heyb7.github.io/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/heyb7/heyb7.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/heyb7/heyb7.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/heyb7/heyb7.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
