@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-03-28T13:24:04&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-28T13:24:04&#43;08:00" />
-<meta itemprop="wordCount" content="1927">
+<meta itemprop="wordCount" content="1971">
 
 
 
@@ -370,30 +370,59 @@
 <h1 id="安装hugo">安装Hugo</h1>
 
 <p>假如把hugo安装到D:\hugo目录下，先在D盘下新建hugo目录，然后在hugo目录下再新建2个目录，bin和sites。目录结构如下：</p>
-
-<pre><code>D:\hugo
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">D:\hugo
 ├─bin
-└─sites
-</code></pre>
-
+└─sites</pre></td></tr></table>
+</div>
+</div>
 <p>把下载的hugo压缩包直接解压到bin目录下，然后把D:\hugo\bin路径添加到系统的PATH变量中。<br />
 验证hugo是否安装成功，在新打开的cmder中输入 hugo version,显示下面的信息说明hugo安装成功了，如果出现 hugo: command not found，请检查PATH环境变量。</p>
-
-<pre><code>Hugo Static Site Generator v0.54.0/extended windows/amd64 BuildDate: unknown
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Hugo Static Site Generator v0.54.0/extended windows/amd64 BuildDate: unknown</pre></td></tr></table>
+</div>
+</div>
 <h1 id="使用hugo建立网站数据">使用hugo建立网站数据</h1>
 
 <ol>
 <li><p>首先建立网站的数据目录结构</p>
-
-<pre><code>cd D:\hugo\sites
-hugo new site myblog   # myblog是网站数据的目录，名字可以任意
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd D:\hugo\sites
+hugo new site myblog   # myblog是网站数据的目录，名字可以任意</pre></td></tr></table>
+</div>
+</div>
 <p>这时进入sites目录，将会看到新生成的myblog目录，目录结构如下：</p>
-
-<pre><code>D:\HUGO\SITES\MYBLOG
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">D:\HUGO\SITES\MYBLOG
 │  config.toml
 │
 ├─archetypes
@@ -403,46 +432,73 @@ hugo new site myblog   # myblog是网站数据的目录，名字可以任意
 ├─data
 ├─layouts
 ├─static
-└─themes
-</code></pre>
-
+└─themes</pre></td></tr></table>
+</div>
+</div>
 <p>archetypes目录里可以放一些原型，用于hugo新建内容的配置属性。config.toml是网站的配置属性文件。content目录里放你网站的内容，例如你发布的博客文章。data目录是hugo使用的配置文件存放的地方。layout目录存放布局内容。static目录存放静态资源如图片、css等。themes目录存放hugo主题。</p></li>
 
 <li><p>创建博客页面</p>
-
-<pre><code>cd myblog
-hugo new post/first_blog.md
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd myblog
+hugo new post/first_blog.md</pre></td></tr></table>
+</div>
+</div>
 <p>上面命令会在content目录下新生成一个post目录，在post目录下新生成一个first_blog.md文件。这个文件就是一个页面文件。打开md文件，里面已经自动生成了一些内容：</p>
-
-<pre><code>---
-title: &quot;Firest_blog&quot;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">---
+title: &#34;Firest_blog&#34;
 date: 2019-03-28T14:35:12+08:00
 draft: true
----
-</code></pre>
-
+---</pre></td></tr></table>
+</div>
+</div>
 <p>&mdash;里面的是一些配置信息，默认只生成这3项，可以自己在添加一些：</p>
-
-<pre><code>---
-title: &quot;Firest_blog&quot;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">---
+title: &#34;Firest_blog&#34;
 date: 2019-03-28T14:35:12+08:00
 draft: false
-tags: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot;]
----
-</code></pre>
-
+tags: [&#34;tag1&#34;, &#34;tag2&#34;, &#34;tag3&#34;]
+---</pre></td></tr></table>
+</div>
+</div>
 <p>其中title是博客文章的名字，date是时间，draft是true时不发布文章，要发布文章的话需要改成false。tags是文章的标签，可以添加多个，以逗号隔开。
 这时可以往新生成的md文件中加入以下markdown格式的内容。</p></li>
 
 <li><p>下载hugo主题<br />
 hugo提供了很多主题，自己可以去<a href="https://themes.gohugo.io/">Hugo主题网站</a>挑选一个自己喜欢的主题。我选择的主题是<a href="https://themes.gohugo.io/hugo-theme-jane/">jane</a>。然后下载主题：</p>
-
-<pre><code>cd myblog
-git clone https://github.com/xianmin/hugo-theme-jane.git themes/jane
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd myblog
+git clone https://github.com/xianmin/hugo-theme-jane.git themes/jane</pre></td></tr></table>
+</div>
+</div>
 <p>这时主题将会下载到themes的jane目录中。</p></li>
 </ol>
 
@@ -450,23 +506,38 @@ git clone https://github.com/xianmin/hugo-theme-jane.git themes/jane
 
 <ul>
 <li><p>把新下载主题中的配置文件(config.toml)复制到myblog的根目录下：</p>
-
-<pre><code>cd myblog
-cp themes/jane/exampleSite/config.toml ./
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd myblog
+cp themes/jane/exampleSite/config.toml ./</pre></td></tr></table>
+</div>
+</div>
 <p>配置文件(config.toml)是静态网站的一些配置信息，其中的内容可以自己看一下，里面有详细的描述。如果要发布到github中，必须把配置文件中的 <strong>baseURL</strong>设置成<strong>&ldquo;https://用户名.github.io/&rdquo;</strong>。
 启动Hugo自带的服务器来测试：</p>
-
-<pre><code>cd myblog
-hugo server
-</code></pre></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd myblog
+hugo server</pre></td></tr></table>
+</div>
+</div></li>
 
 <li><p>如果上面没有复制主题的配置文件到myblog根目录下，也可以这样来启动hugo服务：</p>
-
-<pre><code>hugo server -t jane   # jane是themes中的主题名字
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo server -t jane   # jane是themes中的主题名字</pre></td></tr></table>
+</div>
+</div>
 <p>其中-t是指明使用那个主题，后面跟主题的名字。这种方式可以方面我们测试不同主题的效果，省去了频繁拷贝主题的配置文件到myblog根目录下。</p></li>
 
 <li><p>hugo服务器启动后，在浏览器中输入：<a href="http://127.0.0.1:1313就可以看到效果。">http://127.0.0.1:1313就可以看到效果。</a></p></li>
@@ -478,28 +549,46 @@ hugo server
 <li>首先要有github的账号，然后在github上创建一个新的仓库。仓库的名字必须是  <strong>用户名.github.io</strong>。记得把myblog目录下配置文件中的 <strong>baseURL</strong>改成<strong>&ldquo;https://用户名.github.io/&rdquo;</strong>。</li>
 
 <li><p>发布前先执行如下命令使用hugo进行编译：</p>
-
-<pre><code>cd myblog
-hugo
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd myblog
+hugo</pre></td></tr></table>
+</div>
+</div>
 <p>如果没有配置好myblog下的配置文件可以用下面的命令：</p>
-
-<pre><code>hugo --theme jane --baseURL &quot;https://用户名.github.io&quot;
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo --theme jane --baseURL &#34;https://用户名.github.io&#34;</pre></td></tr></table>
+</div>
+</div>
 <p>hugo将编译好的文件输出到myblog的public目录中，public目录中的文件就是我们要正式发布的站点数据。</p></li>
 
 <li><p>发布</p>
-
-<pre><code>cd public
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd public
 git init
 git add .
-git commit -m &quot;commit info&quot;
+git commit -m &#34;commit info&#34;
 git remote add origin https://github.com/用户名/用户名.github.io.git
-git push origin master
-</code></pre>
-
+git push origin master</pre></td></tr></table>
+</div>
+</div>
 <p>git push的时候会要求输入github的用户名和密码。push之后就可以通过浏览器访问自己的博客站点了。</p></li>
 </ol>
 
