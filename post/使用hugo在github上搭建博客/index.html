@@ -71,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2019-03-28T13:24:04&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-28T13:24:04&#43;08:00" />
-<meta itemprop="wordCount" content="1971">
+<meta itemprop="wordCount" content="2510">
 
 
 
@@ -329,8 +329,8 @@
           2019-03-28
         </time>
         
-        <span class="more-meta"> 约 1971 字 </span>
-          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span class="more-meta"> 约 2510 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
 
         
         
@@ -357,6 +357,7 @@
 <li><a href="#使用hugo建立网站数据">使用hugo建立网站数据</a></li>
 <li><a href="#测试新下载的主题">测试新下载的主题</a></li>
 <li><a href="#发布到github">发布到github</a></li>
+<li><a href="#利用-git-submodule-管理hugo博客仓库">利用 Git submodule 管理hugo博客仓库</a></li>
 </ul>
 </nav>
   </div>
@@ -606,6 +607,67 @@ git push origin master</pre></td></tr></table>
 <p>git push的时候会要求输入github的用户名和密码。push之后就可以通过浏览器访问自己的博客站点了。</p></li>
 </ol>
 
+<h1 id="利用-git-submodule-管理hugo博客仓库">利用 Git submodule 管理hugo博客仓库</h1>
+
+<p>为了方便管理和以后再次使用hugo生成的博客内容，主要是为了方便修改已经发布的博客文章和增加新的博客，可以把hugo博客托管到GitHub上。
+这样在hugo下面就会有<code>hugo博客</code>、<code>GitHub Pages</code>和<code>hugo 主题</code>三个 git 仓库。其中hugo 博客作为主仓库，GitHub Pages和 hugo主题作为子仓库。</p>
+
+<p><strong>使用Git submodule管理子仓库</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> myblog
+
+<span class="c1"># 把主题仓库作为子仓库加到hugo博客仓库中，主题仓库放在 themes/jane 目录下</span>
+git submodule add  https://github.com/xianmin/hugo-theme-jane.git themes/jane
+
+<span class="c1"># 把github pages仓库作为子仓库加到hugo博客仓库中</span>
+<span class="c1"># 路径放在public目录下，public目录是hugo build生成静态文件的目录，里面的内容就是要部署到github pages上的</span>
+git submodule add https://github.com/heyb7/heyb7.github.io.git public</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>使用hugo博客仓库</strong></p>
+
+<p>hugo博客仓库托管到GitHub后，当使用 git clone把带有子仓库的 hugo 博客仓库克隆下来后，submodule的仓库并不会被clone下来，需要执行如下命令：</p>
+
+<p><code>git submodule update --init --recursive</code></p>
+
+<p>即可把submodule的内容下载下来。</p>
+
+<p>当修改了旧的博客文章或者是增加了新的博客文章后，需要重新使用 hugo 来编译生成博客的静态文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd myblog
+
+# hugo build 生成的静态文件放在public目录下
+hugo 
+
+cd public
+git add .
+git commit -m &#34;comments&#34;
+git push origin master</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
