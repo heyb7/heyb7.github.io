@@ -6,10 +6,19 @@
     <description>Recent content in Posts on heyb7&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Oct 2019 17:48:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 20:54:50 +0800</lastBuildDate>
     
 	<atom:link href="https://heyb7.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>字符终端设置代理</title>
+      <link>https://heyb7.github.io/post/%E5%AD%97%E7%AC%A6%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Thu, 07 Nov 2019 20:54:50 +0800</pubDate>
+      
+      <guid>https://heyb7.github.io/post/%E5%AD%97%E7%AC%A6%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</guid>
+      <description>set http or socks proxy 1 2 3 4 5 6 7 8 9 10 11 # set http proxy export http_proxy=http://127.0.0.1:8080 # set http proxy with user and password export http_proxy=http://USERNAME:PASSWORD@127.0.0.1:8080 # set http proxy with user and password (with special characters) export http_proxy=http://`urlencode &amp;#39;USERNAME&amp;#39;`:`urlencode &amp;#39;PASSWORD&amp;#39;`@127.0.0.1:8080 # set socks proxy (local DNS) export http_proxy=socks5://127.0.0.1:1080 # set socks proxy (remote DNS) export http_proxy=socks5h://127.0.0.1:1080 1 2 3 4 5 6 7</description>
+    </item>
     
     <item>
       <title>Shell脚本语法</title>
