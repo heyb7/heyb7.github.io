@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://heyb7.github.io/sitemap.xml

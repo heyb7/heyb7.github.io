@@ -1,15 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on heyb7&#39;s blog</title>
     <link>https://heyb7.github.io/post/</link>
     <description>Recent content in Posts on heyb7&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 29 Mar 2019 15:09:07 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Oct 2019 17:48:52 +0800</lastBuildDate>
     
 	<atom:link href="https://heyb7.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Shell脚本语法</title>
+      <link>https://heyb7.github.io/post/shell%E8%84%9A%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 16 Oct 2019 17:48:52 +0800</pubDate>
+      
+      <guid>https://heyb7.github.io/post/shell%E8%84%9A%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>一、显示消息 使用 echo 命令来显示消息 1 2 3 4 5 $ echo This is a test This is a test $ echo &amp;#34;Let&amp;#39;s see if this&amp;#39;ll work&amp;#34; Let&amp;#39;s see if this&amp;#39;ll work echo 输出不换行 echo 命令的 -n 参数表示输出文本字符后不换行 1 2</description>
+    </item>
     
     <item>
       <title>Markdown基本语法</title>
