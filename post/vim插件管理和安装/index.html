@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Markdown基本语法 - heyb7&#39;s blog</title>
+  <title>Vim插件管理和安装 - heyb7&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="heyb7" />
-  <meta name="description" content="一、标题 标题用 # 标识 创建标题只需要在标题文字前面加上 # 号，一级标题是一个#号，二级标题是两个#号，以此类推，一共支持六级标题。#号和文字之间" />
+  <meta name="description" content="插件管理工具 Pathogen Pathogen 是一个vim插件管理工具，使用它来管理其他的vim插件，官方网站 安装 Pathogen 我们首先安装 Pathogen 1 2 3 4 5 # 新建2个目录 mkdir -p ~/.vim/autoload ~/.vim/bundle # 安装P" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.59.1" />
 
 
-<link rel="canonical" href="https://heyb7.github.io/post/markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+<link rel="canonical" href="https://heyb7.github.io/post/vim%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E5%AE%89%E8%A3%85/" />
 
 
 
@@ -59,26 +59,26 @@
 
 
 
-<meta property="og:title" content="Markdown基本语法" />
-<meta property="og:description" content="一、标题 标题用 # 标识 创建标题只需要在标题文字前面加上 # 号，一级标题是一个#号，二级标题是两个#号，以此类推，一共支持六级标题。#号和文字之间" />
+<meta property="og:title" content="Vim插件管理和安装" />
+<meta property="og:description" content="插件管理工具 Pathogen Pathogen 是一个vim插件管理工具，使用它来管理其他的vim插件，官方网站 安装 Pathogen 我们首先安装 Pathogen 1 2 3 4 5 # 新建2个目录 mkdir -p ~/.vim/autoload ~/.vim/bundle # 安装P" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://heyb7.github.io/post/markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
-<meta property="article:published_time" content="2019-03-29T15:09:07+08:00" />
-<meta property="article:modified_time" content="2019-03-29T15:09:07+08:00" />
-<meta itemprop="name" content="Markdown基本语法">
-<meta itemprop="description" content="一、标题 标题用 # 标识 创建标题只需要在标题文字前面加上 # 号，一级标题是一个#号，二级标题是两个#号，以此类推，一共支持六级标题。#号和文字之间">
+<meta property="og:url" content="https://heyb7.github.io/post/vim%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E5%AE%89%E8%A3%85/" />
+<meta property="article:published_time" content="2019-11-08T14:55:43+08:00" />
+<meta property="article:modified_time" content="2019-11-08T14:55:43+08:00" />
+<meta itemprop="name" content="Vim插件管理和安装">
+<meta itemprop="description" content="插件管理工具 Pathogen Pathogen 是一个vim插件管理工具，使用它来管理其他的vim插件，官方网站 安装 Pathogen 我们首先安装 Pathogen 1 2 3 4 5 # 新建2个目录 mkdir -p ~/.vim/autoload ~/.vim/bundle # 安装P">
 
 
-<meta itemprop="datePublished" content="2019-03-29T15:09:07&#43;08:00" />
-<meta itemprop="dateModified" content="2019-03-29T15:09:07&#43;08:00" />
-<meta itemprop="wordCount" content="1430">
+<meta itemprop="datePublished" content="2019-11-08T14:55:43&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-08T14:55:43&#43;08:00" />
+<meta itemprop="wordCount" content="1319">
 
 
 
-<meta itemprop="keywords" content="Markdown,syntax," />
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Markdown基本语法"/>
-<meta name="twitter:description" content="一、标题 标题用 # 标识 创建标题只需要在标题文字前面加上 # 号，一级标题是一个#号，二级标题是两个#号，以此类推，一共支持六级标题。#号和文字之间"/>
+<meta name="twitter:title" content="Vim插件管理和安装"/>
+<meta name="twitter:description" content="插件管理工具 Pathogen Pathogen 是一个vim插件管理工具，使用它来管理其他的vim插件，官方网站 安装 Pathogen 我们首先安装 Pathogen 1 2 3 4 5 # 新建2个目录 mkdir -p ~/.vim/autoload ~/.vim/bundle # 安装P"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -322,14 +322,14 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Markdown基本语法</h1>
+      <h1 class="post-title">Vim插件管理和安装</h1>
       
       <div class="post-meta">
-        <time datetime="2019-03-29" class="post-time">
-          2019-03-29
+        <time datetime="2019-11-08" class="post-time">
+          2019-11-08
         </time>
         
-        <span class="more-meta"> 约 1430 字 </span>
+        <span class="more-meta"> 约 1319 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -351,31 +351,10 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#一-标题">一、标题</a></li>
-<li><a href="#一级标题">一级标题</a>
-<ul>
-<li><a href="#二级标题">二级标题</a>
-<ul>
-<li><a href="#三级标题">三级标题</a>
-<ul>
-<li><a href="#四级标题">四级标题</a>
-<ul>
-<li><a href="#五级标题">五级标题</a>
-<ul>
-<li><a href="#六级标题">六级标题</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#二-段落">二、段落</a></li>
-<li><a href="#三-字体强调">三、字体强调</a></li>
-<li><a href="#四-分割线">四、分割线</a></li>
-<li><a href="#五-图片">五、图片</a></li>
-<li><a href="#六-超链接">六、超链接</a></li>
-<li><a href="#七-列表">七、列表</a></li>
-<li><a href="#八-表格">八、表格</a></li>
-<li><a href="#九-代码">九、代码</a></li>
+<li><a href="#插件管理工具-pathogen">插件管理工具 Pathogen</a></li>
+<li><a href="#ctags和taglist插件">Ctags和taglist插件</a></li>
+<li><a href="#文件浏览插件-nerdtree">文件浏览插件 NERDTree</a></li>
+<li><a href="#自动补全插件-supertab">自动补全插件 supertab</a></li>
 </ul>
 </nav>
   </div>
@@ -385,196 +364,95 @@
     <div class="post-content">
       
 
-<h1 id="一-标题">一、标题</h1>
+<h1 id="插件管理工具-pathogen">插件管理工具 Pathogen</h1>
 
-<p>标题用 <strong>#</strong> 标识<br />
-创建标题只需要在标题文字前面加上 <strong>#</strong> 号，一级标题是一个#号，二级标题是两个#号，以此类推，一共支持六级标题。<strong>#号和文字之间需要加个空格</strong></p>
+<p>Pathogen 是一个vim插件管理工具，使用它来管理其他的vim插件，<a href="https://github.com/tpope/vim-pathogen">官方网站</a></p>
 
-<p>示例：</p>
+<p><strong>安装 Pathogen</strong></p>
+
+<p>我们首先安装 Pathogen</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"># 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题</pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 新建2个目录</span>
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+
+<span class="c1"># 安装Pathogen</span>
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim</code></pre></td></tr></table>
 </div>
 </div>
-<p>效果：</p>
+<p>这时在~/.vim目录下就多了两个文件夹autoload和bundle。</p>
 
-<h1 id="一级标题">一级标题</h1>
+<p>autoload文件夹下有pathogen.vim文件，是安装pathogen的目录；</p>
 
-<h2 id="二级标题">二级标题</h2>
+<p>bundle文件夹是以后安装其他插件的目录，也就是说以后安装vim其他插件都安装在~/.vim/bundle目录下，进行统一的管理。</p>
 
-<h3 id="三级标题">三级标题</h3>
-
-<h4 id="四级标题">四级标题</h4>
-
-<h5 id="五级标题">五级标题</h5>
-
-<h6 id="六级标题">六级标题</h6>
-
-<h1 id="二-段落">二、段落</h1>
-
-<p>段落的前后都要有空行，段落内换行的方式是<strong>两个空格加回车</strong>。</p>
-
-<h1 id="三-字体强调">三、字体强调</h1>
-
-<ol>
-<li><p>加粗</p>
-
-<p>示例：</p>
+<p>在 ~/.vimrc 中加入下面的命令使 Pathogen 生效：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">**加粗字体**   或者  __加粗字体__</pre></td></tr></table>
-</div>
-</div>
-<p>效果：
-<strong>加粗字体</strong></p></li>
-
-<li><p>斜体</p>
-
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">*斜体字体*   或者  _斜体字体_</pre></td></tr></table>
-</div>
-</div>
-<p>效果：<br />
-<em>斜体字体</em></p></li>
-
-<li><p>斜体加粗</p>
-
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">***斜体加粗***   或者  ___斜体加粗___</pre></td></tr></table>
-</div>
-</div>
-<p>效果：<br />
-<strong><em>斜体加粗</em></strong></p></li>
-
-<li><p>删除线</p>
-
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">~~加删除线的文字~~</pre></td></tr></table>
-</div>
-</div>
-<p>效果：<br />
-<del>加删除线的文字</del></p></li>
-</ol>
-
-<h1 id="四-分割线">四、分割线</h1>
-
-<p>使用三个或者三个以上的*或者_。<br />
-示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">*** 或者 ___</pre></td></tr></table>
-</div>
-</div>
-<p>效果：</p>
-
-<hr />
-
-<hr />
-
-<h1 id="五-图片">五、图片</h1>
-
-<p>语法:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">![图片alt](图片url &#34;图片title&#34;)
-图片alt就是显示在图片下面的文字，相当于对图片内容的解释。
-图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</pre></td></tr></table>
-</div>
-</div>
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">![夜空](http://img06.tooopen.com/images/20180226/tooopen_sy_234303751591.jpg &#34;夜空图片&#34;)
-或者
-&lt;div align=&#34;center&#34;&gt;![夜空](http://img06.tooopen.com/images/20180226/tooopen_sy_234303751591.jpg &#34;夜空图片&#34;)  
-夜空&lt;/div&gt;</pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s2">&#34;Pathogen配置
+</span><span class="s2">execute pathogen#infect()
+</span><span class="s2">syntax on
+</span><span class="s2">filetype plugin indent on</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>效果:<br />
-<img src="http://img06.tooopen.com/images/20180226/tooopen_sy_234303751591.jpg" alt="夜空" title="夜空图片" /></p>
+<h1 id="ctags和taglist插件">Ctags和taglist插件</h1>
 
-<h1 id="六-超链接">六、超链接</h1>
+<p>Ctags工具是用来遍历源代码文件生成tags文件，tags文件能被编辑器或其它工具用来快速查找定位源代码中的符号（tag/symbol），如变量名，函数名等。</p>
 
-<p>语法：</p>
+<p>比如，tags文件就是Taglist和OmniCppComplete工作的基础。</p>
+
+<p><strong>安装 Ctags</strong></p>
+
+<p>1、在线安装
+<code>yum install ctags</code></p>
+
+<p>2、下载源码编译安装</p>
+
+<p>下载地址：<a href="http://ctags.sourceforge.net">http://ctags.sourceforge.net</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">[超链接名](超链接url &#34;超链接title&#34;)  </pre></td></tr></table>
-</div>
-</div>
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span><span class="lnt">3
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">[必应](https://cn.bing.com/)
-[github](https://github.com/)</pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">./configure
+make
+sudo make install</code></pre></td></tr></table>
 </div>
 </div>
-<p>效果：<br />
-<a href="https://cn.bing.com/">必应</a><br />
-<a href="https://github.com/">github</a></p>
+<p><strong>使用Ctags</strong></p>
 
-<h1 id="七-列表">七、列表</h1>
+<p>在工程或项目的源码根目录下执行：
+<code>ctags -R *</code></p>
 
-<ul>
-<li>无序列表<br />
-无序列表使用 * + -  中的任何一个都可以， * + - 跟文字之间要有一个空格<br /></li>
-</ul>
+<p><code>-R</code>表示递归创建，也就是包括源代码根目录（当前目录）下的所有子目录。<code>*</code>表示所有文件。这条命令会在当前目录下产生一个<code>tags</code>文件，当用户在当前目录中打开vim时，会自动载入此tags文件。</p>
 
-<p>示例：</p>
+<p><strong>安装taglist</strong></p>
+
+<p>taglist下载地址 <a href="http://www.vim.org/scripts/script.php?script_id=273">http://www.vim.org/scripts/script.php?script_id=273</a></p>
+
+<p>下载后解压放在~/.vim/bundle目录中</p>
+
+<p><strong>配置taglist</strong></p>
+
+<p>在~/.vimrc中加入下面的命令来配置taglist</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -585,195 +463,125 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span></pre></td>
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">* 无序列表1
-* 无序列表2
-* 无序列表3
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s2">&#34;taglist配置信息
+</span><span class="s2">&#34;</span>快捷键：使用F3打开关闭
+map &lt;silent&gt; &lt;F3&gt; :TlistToggle&lt;CR&gt;
 
-+ 无序列表1
-+ 无序列表2
-+ 无序列表3
-
-- 无序列表1
-- 无序列表2
-- 无序列表3</pre></td></tr></table>
+<span class="nb">let</span> <span class="nv">Tlist_Auto_Open</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; Let the tag list open automatically
+</span><span class="s2">let Tlist_Auto_Update=1 &#34;</span> Update the tag list automatically
+<span class="nb">let</span> <span class="nv">Tlist_Compact_Format</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; Hide help menu
+</span><span class="s2">let Tlist_Ctags_Cmd=&#39;ctags&#39; &#34;</span> Location of ctags
+<span class="nb">let</span> <span class="nv">Tlist_Enable_Fold_Column</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34;do show folding tree
+</span><span class="s2">let Tlist_Process_File_Always=1 &#34;</span> Always process the <span class="nb">source</span> file
+<span class="nb">let</span> <span class="nv">Tlist_Show_One_File</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; Only show the tag list of current file
+</span><span class="s2">let Tlist_Exist_OnlyWindow=1 &#34;</span> If you are the last, <span class="nb">kill</span> yourself
+<span class="nb">let</span> <span class="nv">Tlist_File_Fold_Auto_Close</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34; Fold closed other trees
+</span><span class="s2">let Tlist_Sort_Type=&#34;</span>name<span class="s2">&#34; &#34;</span> Order by name
+<span class="nb">let</span> <span class="nv">Tlist_WinWidth</span><span class="o">=</span><span class="m">30</span> <span class="s2">&#34; Set the window 40 cols wide.
+</span><span class="s2">let Tlist_Close_On_Select=1 &#34;</span> Close the list when a item is selected
+<span class="nb">let</span> <span class="nv">Tlist_Use_SingleClick</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;Go To Target By SingleClick
+</span><span class="s2">let Tlist_Use_Right_Window=1 &#34;</span>在右侧显示</code></pre></td></tr></table>
 </div>
 </div>
-<p>效果:</p>
+<h1 id="文件浏览插件-nerdtree">文件浏览插件 NERDTree</h1>
 
-<ul>
-<li>无序列表1</li>
-<li>无序列表2</li>
-<li>无序列表3<br /></li>
-</ul>
+<p><a href="https://github.com/scrooloose/nerdtree">NERDTree</a> 是一个文件浏览的插件，可以方便的在vim中浏览项目中的文件。</p>
 
-<p><br></p>
-
-<ul>
-<li>有序列表<br />
-有序列表使用<strong>数据加点</strong>的语法，数字加点跟文字之间要有一个空格</li>
-</ul>
-
-<p>示例：</p>
+<p><strong>安装 NERDTree</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">1. 有序列表1
-2. 有序列表2
-3. 有序列表3</pre></td></tr></table>
-</div>
-</div>
-<p>效果：</p>
-
-<ol>
-<li>有序列表1</li>
-<li>有序列表2</li>
-<li>有序列表3</li>
-</ol>
-
-<h1 id="八-表格">八、表格</h1>
-
-<p>语法：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">表头|表头|表头
--|:-:|-:
-内容|内容|内容
-内容|内容|内容
-
-第二行用来分隔表头和表格内容的，同时也是控制表格显示的格式(居左，居中，居右)
-短横线(-)只要一个就可以了，如果为了跟上下行对齐写多个-也可以
-表格内容默认居左显示，-两边加：表示内容居中，-右边加：表示居右</pre></td></tr></table>
-</div>
-</div>
-<p><strong>表格的上一行必须是空行，要不表格效果不生效</strong><br />
-如果设置了内容居中，但是表头不居中，可以在表头上加入<code>&lt;center&gt;表头&lt;/center&gt;</code></p>
-
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">皇帝|年号|庙号
-:-:|:-:|:-:
-朱元璋|洪武|明太祖
-朱允炆|建文|明惠宗
-朱棣|永乐|明成祖</pre></td></tr></table>
-</div>
-</div>
-<p>效果：</p>
-
-<table>
-<thead>
-<tr>
-<th align="center"><center>皇帝</center></th>
-<th align="center"><center>年号</center></th>
-<th align="center"><center>庙号</center></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="center">朱元璋</td>
-<td align="center">洪武</td>
-<td align="center">明太祖</td>
-</tr>
-
-<tr>
-<td align="center">朱允炆</td>
-<td align="center">建文</td>
-<td align="center">明惠宗</td>
-</tr>
-
-<tr>
-<td align="center">朱棣</td>
-<td align="center">永乐</td>
-<td align="center">明成祖</td>
-</tr>
-</tbody>
-</table>
-
-<h1 id="九-代码">九、代码</h1>
-
-<ul>
-<li>单行代码<br />
-代码之间用一对反引号`包起来<br /></li>
-</ul>
-
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">`print(&#39;hello world!&#39;)`</pre></td></tr></table>
-</div>
-</div>
-<p>效果：<br />
-<code>print('hello world!')</code></p>
-
-<ul>
-<li>多行代码或围栏代码块<br />
-多行代码可以用缩进的方式处理，缩进4个空格或者一个制表符都可以。缩进的代码块前面必须要有一个空行
-围栏代码块之间用三个反引号包起来，还可以指定语言的标识符，然后就能对代码启用语法着色了。<br /></li>
-</ul>
-
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">```python
-def say_hello():
-    print(&#39;hello world!&#39;)
-
-if __name__ == &#39;__main__&#39;:
-    say_hello()
-```</pre></td></tr></table>
-</div>
-</div>
-<p>效果：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;hello world!&#39;</span><span class="p">)</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 进入插件安装目录</span>
+<span class="nb">cd</span> ~/.vim/bundle
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">say_hello</span><span class="p">()</span></code></pre></td></tr></table>
+<span class="c1"># clone NERDTree</span>
+git clone https://github.com/scrooloose/nerdtree.git</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>配置 NERDTree</strong></p>
+
+<p>安装完NERDTree后，还需要在~/.vimrc中配置NERDTree</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s2">&#34;NERDTree配置
+</span><span class="s2">&#34;</span>快捷键:使用F2打开关闭
+map &lt;F2&gt; :NERDTreeMirror &lt;CR&gt; 
+map &lt;F2&gt; :NERDTreeToggle &lt;CR&gt;  
+<span class="s2">&#34;NERDTree配置  
+</span><span class="s2">let NERDChristmasTree=1 &#34;</span>显示增强
+<span class="nb">let</span> <span class="nv">NERDTreeAutoCenter</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;自动调整焦点                                                                                                                        
+</span><span class="s2">let NERDTreeShowFiles=1 &#34;</span>显示文件
+<span class="nb">let</span> <span class="nv">NERDTreeShowLineNumbers</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;显示行号
+</span><span class="s2">let NERDTreeHightCursorline=1 &#34;</span>高亮当前文件
+<span class="nb">let</span> <span class="nv">NERDTreeShowHidden</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34;显示隐藏文件
+</span><span class="s2">let NERDTreeMinimalUI=0 &#34;</span>不显示<span class="s1">&#39;Bookmarks&#39;</span> label <span class="s1">&#39;Press ? for help&#39;</span>
+<span class="nb">let</span> <span class="nv">NERDTreeWinSize</span><span class="o">=</span><span class="m">31</span> <span class="s2">&#34;窗口宽度</span></code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="自动补全插件-supertab">自动补全插件 supertab</h1>
+
+<p><a href="https://github.com/ervandew/supertab">Supertab</a>是一个代码自动补全插件</p>
+
+<p><strong>安装Supertab</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 进入插件安装目录</span>
+<span class="nb">cd</span> ~/.vim/bundle
+
+<span class="c1"># clone supertab</span>
+git clone https://github.com/ervandew/supertab</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>配置Supertab</strong></p>
+
+<p>在 ~/.vimrc 中加入下面的命令来配置Supertab</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s2">&#34;配置Supertab
+</span><span class="s2">let g:SuperTabRetainCompletionType=2 &#34;</span>记住上次的补全方式,直到按Esc退出插入模式位置
+<span class="nb">let</span> g:SuperTabDefaultCompletionType<span class="o">=</span><span class="s2">&#34;&lt;c-x&gt;&lt;c-o&gt;&#34;</span>  <span class="s2">&#34;按下tab后默认补全方式为&lt;c-p&gt;,现在改为&lt;c-x&gt;&lt;c-o&gt;</span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -788,7 +596,7 @@ if __name__ == &#39;__main__&#39;:
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2019-03-29
+      2019-11-08
       
     </span>
   </p>
@@ -804,31 +612,14 @@ if __name__ == &#39;__main__&#39;:
     
 
     <footer class="post-footer">
-      <div class="post-tags">
-          <a href="https://heyb7.github.io/tags/markdown/">Markdown</a>
-          <a href="https://heyb7.github.io/tags/syntax/">syntax</a>
-          
-        </div>
+      
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/shell%E8%84%9A%E6%9C%AC%E8%AF%AD%E6%B3%95/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">Shell脚本语法</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/%E4%BD%BF%E7%94%A8hugo%E5%9C%A8github%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
-            <span class="next-text nav-default">使用hugo在github上搭建博客</span>
+          <a class="next" href="/post/%E5%AD%97%E7%AC%A6%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/">
+            <span class="next-text nav-default">字符终端设置代理</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
