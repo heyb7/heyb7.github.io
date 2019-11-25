@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-11-08T14:55:43&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-08T14:55:43&#43;08:00" />
-<meta itemprop="wordCount" content="1318">
+<meta itemprop="wordCount" content="1414">
 
 
 
@@ -195,7 +195,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim</code></pre>
 
 <p>比如，tags文件就是Taglist和OmniCppComplete工作的基础。</p>
 
-<p><strong>安装 Ctags</strong></p>
+<p><strong>1、安装 Ctags</strong></p>
 
 <p>1、在线安装
 <code>yum install ctags</code></p>
@@ -222,7 +222,7 @@ sudo make install</code></pre></td></tr></table>
 
 <p><code>-R</code>表示递归创建，也就是包括源代码根目录（当前目录）下的所有子目录。<code>*</code>表示所有文件。这条命令会在当前目录下产生一个<code>tags</code>文件，当用户在当前目录中打开vim时，会自动载入此tags文件</p>
 
-<p><strong>安装taglist</strong></p>
+<p><strong>2、安装taglist</strong></p>
 
 <p>taglist下载地址 <a href="http://www.vim.org/scripts/script.php?script_id=273">http://www.vim.org/scripts/script.php?script_id=273</a></p>
 
@@ -273,6 +273,10 @@ map &lt;silent&gt; &lt;F3&gt; :TlistToggle&lt;CR&gt;
 </span><span class="s2">let Tlist_Use_Right_Window=1 &#34;</span>在右侧显示</code></pre></td></tr></table>
 </div>
 </div>
+<p>在阅读代码时，taglist窗口中会显示当前光标所在的函数，但是taglist切换的比较慢，一般要3-5s才能显示当前函数，可以在 .vimrc 中加入配置让taglist刷新变快。</p>
+
+<p>在 ~/.vimrc 中加入： <code>set updatetime=100</code></p>
+
 <h1 id="文件浏览插件-nerdtree">文件浏览插件 NERDTree</h1>
 
 <p><a href="https://github.com/scrooloose/nerdtree">NERDTree</a> 是一个文件浏览的插件，可以方便的在vim中浏览项目中的文件。</p>
