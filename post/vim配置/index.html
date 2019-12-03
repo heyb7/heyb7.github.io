@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vim配置 - heyb7&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="heyb7" /><meta name="description" content="vim 配置文件 vim 的全局配置一般在/etc/vim/vimrc或者/etc/vimrc，对所有用户生效。用户个人的配置在~/.vimrc 1 2 3 4 5" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://heyb7.github.io/post/vim%E9%85%8D%E7%BD%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Vim配置" />
+<meta property="og:description" content="vim 配置文件 vim 的全局配置一般在/etc/vim/vimrc或者/etc/vimrc，对所有用户生效。用户个人的配置在~/.vimrc 1 2 3 4 5" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://heyb7.github.io/post/vim%E9%85%8D%E7%BD%AE/" />
+<meta property="article:published_time" content="2019-11-10T15:41:57+08:00" />
+<meta property="article:modified_time" content="2019-11-10T15:41:57+08:00" />
+<meta itemprop="name" content="Vim配置">
+<meta itemprop="description" content="vim 配置文件 vim 的全局配置一般在/etc/vim/vimrc或者/etc/vimrc，对所有用户生效。用户个人的配置在~/.vimrc 1 2 3 4 5">
+
+
+<meta itemprop="datePublished" content="2019-11-10T15:41:57&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-10T15:41:57&#43;08:00" />
+<meta itemprop="wordCount" content="1069">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vim配置"/>
+<meta name="twitter:description" content="vim 配置文件 vim 的全局配置一般在/etc/vim/vimrc或者/etc/vimrc，对所有用户生效。用户个人的配置在~/.vimrc 1 2 3 4 5"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">heyb7</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">heyb7</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vim配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-11-10 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#vim-配置文件">vim 配置文件</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="vim-配置文件">vim 配置文件</h1>
+
+<p>vim 的全局配置一般在<code>/etc/vim/vimrc</code>或者<code>/etc/vimrc</code>，对所有用户生效。用户个人的配置在<code>~/.vimrc</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">&#34;语法高亮
+</span><span class="s2">syntax on
+</span><span class="s2">
+</span><span class="s2">&#34;</span>在底部显示，当前处于命令模式还是插入模式
+<span class="nb">set</span> showmode
+
+<span class="s2">&#34;命令模式下，在底部显示，当前键入的指令
+</span><span class="s2">set showcmd
+</span><span class="s2">
+</span><span class="s2">&#34;</span>显示行号
+<span class="nb">set</span> nu
+
+<span class="s2">&#34;设置光标行高亮显示，背景是红色,文字时白色
+</span><span class="s2">&#34;</span>ctermbg:当前行的背景色，ctermfg:当前行的前景色<span class="o">(</span>文字颜色<span class="o">)</span>
+<span class="nb">set</span> cursorline
+hi CursorLine   <span class="nv">cterm</span><span class="o">=</span>NONE <span class="nv">ctermbg</span><span class="o">=</span>darkred <span class="nv">ctermfg</span><span class="o">=</span>white
+
+
+<span class="s2">&#34;显示括号匹配
+</span><span class="s2">set showmatch
+</span><span class="s2">
+</span><span class="s2">&#34;</span>设置缩进
+<span class="s2">&#34;设置Tab长度为4空格&#39;
+</span><span class="s2">set tabstop=4
+</span><span class="s2">&#34;</span>设置自动缩进长度为4空格<span class="s1">&#39;
+</span><span class="s1">set shiftwidth=4
+</span><span class="s1">
+</span><span class="s1">&#34;自动对齐，继承前一行的缩进方式，适用于多行注释&#39;</span>
+<span class="nb">set</span> autoindent
+
+<span class="s2">&#34;智能缩进
+</span><span class="s2">set smartindent
+</span><span class="s2">
+</span><span class="s2">&#34;</span>c文件自动缩进
+<span class="nb">set</span> cindent
+
+<span class="s2">&#34;搜索时，每输入一个字符，就自动跳到第一个匹配的结果
+</span><span class="s2">set incsearch
+</span><span class="s2">
+</span><span class="s2">&#34;</span>设置粘贴模式
+<span class="s2">&#34;set paste
+</span><span class="s2">
+</span><span class="s2">&#34;</span>启用鼠标
+<span class="nb">set</span> <span class="nv">mouse</span><span class="o">=</span>a  <span class="s2">&#34; always use mouse
+</span><span class="s2">
+</span><span class="s2">
+</span><span class="s2">set tags=tags;
+</span><span class="s2">set autochdir
+</span><span class="s2">
+</span><span class="s2">&#34;</span>让taglist中函数刷新变快
+<span class="nb">set</span> <span class="nv">updatetime</span><span class="o">=</span><span class="m">100</span>
+
+<span class="s2">&#34;PATHOGEN配置
+</span><span class="s2">execute pathogen#infect()
+</span><span class="s2">filetype plugin on &#34;</span>允许插件
+filetype plugin indent on <span class="s2">&#34;启动智能补全
+</span><span class="s2">
+</span><span class="s2">
+</span><span class="s2">&#34;</span>nerdtree配置
+<span class="s2">&#34;快捷键:使用F2打开关闭
+</span><span class="s2">&#34;</span>map &lt;F2&gt; :NERDTreeMirror &lt;CR&gt;
+<span class="s2">&#34;map &lt;F2&gt; :NERDTreeToggle &lt;CR&gt;   &#34;</span>开关NERDTree
+map &lt;F2&gt; :NERDTreeTabsToggle &lt;CR&gt;   <span class="s2">&#34;开关NERDTree tab版, 需要安装vim-nerdtree-tabs插件
+</span><span class="s2">&#34;</span>NERDTree配置
+<span class="nb">let</span> <span class="nv">NERDChristmasTree</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;显示增强
+</span><span class="s2">let NERDTreeAutoCenter=1 &#34;</span>自动调整焦点
+<span class="nb">let</span> <span class="nv">NERDTreeShowFiles</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;显示文件
+</span><span class="s2">let NERDTreeShowLineNumbers=1 &#34;</span>显示行号
+<span class="nb">let</span> <span class="nv">NERDTreeHightCursorline</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;高亮当前文件
+</span><span class="s2">let NERDTreeShowHidden=0 &#34;</span>显示隐藏文件
+<span class="nb">let</span> <span class="nv">NERDTreeMinimalUI</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34;不显示&#39;Bookmarks&#39; label &#39;Press ? for help&#39;
+</span><span class="s2">let NERDTreeWinPos=&#39;left&#39; &#34;</span>窗口位置在左边
+<span class="nb">let</span> <span class="nv">NERDTreeWinSize</span><span class="o">=</span><span class="m">31</span> <span class="s2">&#34;窗口宽度
+</span><span class="s2">&#34;</span>当NERDTree为剩下的唯一窗口时自动关闭
+autocmd bufenter * <span class="k">if</span> <span class="o">(</span>winnr<span class="o">(</span><span class="s2">&#34;</span>$<span class="s2">&#34;</span><span class="o">)</span> <span class="o">==</span> <span class="m">1</span> <span class="o">&amp;&amp;</span> exists<span class="o">(</span><span class="s2">&#34;b:NERDTree&#34;</span><span class="o">)</span> <span class="o">&amp;&amp;</span> b:NERDTree.isTabTree<span class="o">())</span> <span class="p">|</span> q <span class="p">|</span> endif
+<span class="s2">&#34;打开vim时自动打开NERDTreetab
+</span><span class="s2">let g:nerdtree_tabs_open_on_console_startup=0
+</span><span class="s2">
+</span><span class="s2">&#34;</span>taglist配置信息
+<span class="s2">&#34;打开关闭快捷键
+</span><span class="s2">map &lt;silent&gt; &lt;F3&gt; :TlistToggle&lt;CR&gt;
+</span><span class="s2">let Tlist_Auto_Open=0 &#34;</span> Let the tag list open automatically
+<span class="nb">let</span> <span class="nv">Tlist_Auto_Update</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34; Update the tag list automatically
+</span><span class="s2">let Tlist_Compact_Format=1 &#34;</span> Hide <span class="nb">help</span> menu
+<span class="nb">let</span> <span class="nv">Tlist_Ctags_Cmd</span><span class="o">=</span><span class="s1">&#39;ctags&#39;</span> <span class="s2">&#34; Location of ctags
+</span><span class="s2">let Tlist_Enable_Fold_Column=0 &#34;</span><span class="k">do</span> show folding tree
+<span class="nb">let</span> <span class="nv">Tlist_Process_File_Always</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; Always process the source file
+</span><span class="s2">let Tlist_Show_One_File=1 &#34;</span> Only show the tag list of current file
+<span class="nb">let</span> <span class="nv">Tlist_Exit_OnlyWindow</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; If you are the last, kill yourself
+</span><span class="s2">let Tlist_File_Fold_Auto_Close=0 &#34;</span> Fold closed other trees
+<span class="nb">let</span> <span class="nv">Tlist_Sort_Type</span><span class="o">=</span><span class="s2">&#34;name&#34;</span> <span class="s2">&#34; Order by name
+</span><span class="s2">let Tlist_WinWidth=30 &#34;</span> Set the window <span class="m">40</span> cols wide.
+<span class="nb">let</span> <span class="nv">Tlist_Close_On_Select</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34; Close the list when a item is selected
+</span><span class="s2">let Tlist_Use_SingleClick=1 &#34;</span>Go To Target By SingleClick
+<span class="nb">let</span> <span class="nv">Tlist_Use_Right_Window</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;在右侧显示
+</span><span class="s2">
+</span><span class="s2">&#34;</span>EasyComplete配置
+imap &lt;Tab&gt;   &lt;Plug&gt;EasyCompTabTrigger
+imap &lt;S-Tab&gt; &lt;Plug&gt;EasyCompShiftTabTrigger
+<span class="nb">let</span> g:pmenu_scheme <span class="o">=</span> <span class="s1">&#39;dark&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">heyb7</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-11-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/linux%E8%B0%83%E6%95%B4swap%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux调整swap分区大小</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/vim%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E5%AE%89%E8%A3%85/">
+            <span class="next-text nav-default">Vim插件管理和安装</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://heyb7.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">heyb7</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

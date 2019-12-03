@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Vim配置</title>
+      <link>https://heyb7.github.io/post/vim%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 10 Nov 2019 15:41:57 +0800</pubDate>
+      
+      <guid>https://heyb7.github.io/post/vim%E9%85%8D%E7%BD%AE/</guid>
+      <description>vim 配置文件 vim 的全局配置一般在/etc/vim/vimrc或者/etc/vimrc，对所有用户生效。用户个人的配置在~/.vimrc 1 2 3 4 5</description>
+    </item>
+    
+    <item>
       <title>Vim插件管理和安装</title>
       <link>https://heyb7.github.io/post/vim%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E5%AE%89%E8%A3%85/</link>
       <pubDate>Fri, 08 Nov 2019 14:55:43 +0800</pubDate>
