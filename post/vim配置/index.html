@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-11-10T15:41:57&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-10T15:41:57&#43;08:00" />
-<meta itemprop="wordCount" content="1069">
+<meta itemprop="wordCount" content="1205">
 
 
 
@@ -247,6 +247,13 @@
 </span><span class="lnt"> 98
 </span><span class="lnt"> 99
 </span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">&#34;语法高亮
@@ -294,61 +301,68 @@ hi CursorLine   <span class="nv">cterm</span><span class="o">=</span>NONE <span 
 </span><span class="s2">&#34;</span>启用鼠标
 <span class="nb">set</span> <span class="nv">mouse</span><span class="o">=</span>a  <span class="s2">&#34; always use mouse
 </span><span class="s2">
+</span><span class="s2">&#34;</span>绑定复制/粘贴快捷键，复制到系统粘贴板
+<span class="nb">let</span> <span class="nv">mapleader</span><span class="o">=</span><span class="s2">&#34;;&#34;</span>  <span class="s2">&#34;设置前置键
+</span><span class="s2">vmap &lt;leader&gt;c &#34;</span>+y <span class="s2">&#34;可视化模式使用 ;c 复制
+</span><span class="s2">nmap &lt;leader&gt;v &#34;</span>+p <span class="s2">&#34;正常模式使用 ;v 粘贴
+</span><span class="s2">imap &lt;leader&gt;v &lt;esc&gt;&#34;</span>+p <span class="s2">&#34;插入模式使用 ;v 粘贴
 </span><span class="s2">
-</span><span class="s2">set tags=tags;
-</span><span class="s2">set autochdir
 </span><span class="s2">
-</span><span class="s2">&#34;</span>让taglist中函数刷新变快
-<span class="nb">set</span> <span class="nv">updatetime</span><span class="o">=</span><span class="m">100</span>
+</span><span class="s2">&#34;</span>设置tags，首先在当前目录寻找tags文件，没找到的话再去上层目录寻找
+<span class="nb">set</span> <span class="nv">tags</span><span class="o">=</span>tags<span class="p">;</span>
+<span class="nb">set</span> autochdir
 
-<span class="s2">&#34;PATHOGEN配置
-</span><span class="s2">execute pathogen#infect()
-</span><span class="s2">filetype plugin on &#34;</span>允许插件
-filetype plugin indent on <span class="s2">&#34;启动智能补全
+<span class="s2">&#34;让taglist中函数刷新变快
+</span><span class="s2">set updatetime=100
 </span><span class="s2">
-</span><span class="s2">
-</span><span class="s2">&#34;</span>nerdtree配置
-<span class="s2">&#34;快捷键:使用F2打开关闭
-</span><span class="s2">&#34;</span>map &lt;F2&gt; :NERDTreeMirror &lt;CR&gt;
-<span class="s2">&#34;map &lt;F2&gt; :NERDTreeToggle &lt;CR&gt;   &#34;</span>开关NERDTree
-map &lt;F2&gt; :NERDTreeTabsToggle &lt;CR&gt;   <span class="s2">&#34;开关NERDTree tab版, 需要安装vim-nerdtree-tabs插件
-</span><span class="s2">&#34;</span>NERDTree配置
-<span class="nb">let</span> <span class="nv">NERDChristmasTree</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;显示增强
-</span><span class="s2">let NERDTreeAutoCenter=1 &#34;</span>自动调整焦点
-<span class="nb">let</span> <span class="nv">NERDTreeShowFiles</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;显示文件
-</span><span class="s2">let NERDTreeShowLineNumbers=1 &#34;</span>显示行号
-<span class="nb">let</span> <span class="nv">NERDTreeHightCursorline</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;高亮当前文件
-</span><span class="s2">let NERDTreeShowHidden=0 &#34;</span>显示隐藏文件
-<span class="nb">let</span> <span class="nv">NERDTreeMinimalUI</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34;不显示&#39;Bookmarks&#39; label &#39;Press ? for help&#39;
-</span><span class="s2">let NERDTreeWinPos=&#39;left&#39; &#34;</span>窗口位置在左边
-<span class="nb">let</span> <span class="nv">NERDTreeWinSize</span><span class="o">=</span><span class="m">31</span> <span class="s2">&#34;窗口宽度
-</span><span class="s2">&#34;</span>当NERDTree为剩下的唯一窗口时自动关闭
-autocmd bufenter * <span class="k">if</span> <span class="o">(</span>winnr<span class="o">(</span><span class="s2">&#34;</span>$<span class="s2">&#34;</span><span class="o">)</span> <span class="o">==</span> <span class="m">1</span> <span class="o">&amp;&amp;</span> exists<span class="o">(</span><span class="s2">&#34;b:NERDTree&#34;</span><span class="o">)</span> <span class="o">&amp;&amp;</span> b:NERDTree.isTabTree<span class="o">())</span> <span class="p">|</span> q <span class="p">|</span> endif
-<span class="s2">&#34;打开vim时自动打开NERDTreetab
-</span><span class="s2">let g:nerdtree_tabs_open_on_console_startup=0
-</span><span class="s2">
-</span><span class="s2">&#34;</span>taglist配置信息
-<span class="s2">&#34;打开关闭快捷键
-</span><span class="s2">map &lt;silent&gt; &lt;F3&gt; :TlistToggle&lt;CR&gt;
-</span><span class="s2">let Tlist_Auto_Open=0 &#34;</span> Let the tag list open automatically
-<span class="nb">let</span> <span class="nv">Tlist_Auto_Update</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34; Update the tag list automatically
-</span><span class="s2">let Tlist_Compact_Format=1 &#34;</span> Hide <span class="nb">help</span> menu
-<span class="nb">let</span> <span class="nv">Tlist_Ctags_Cmd</span><span class="o">=</span><span class="s1">&#39;ctags&#39;</span> <span class="s2">&#34; Location of ctags
-</span><span class="s2">let Tlist_Enable_Fold_Column=0 &#34;</span><span class="k">do</span> show folding tree
-<span class="nb">let</span> <span class="nv">Tlist_Process_File_Always</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; Always process the source file
-</span><span class="s2">let Tlist_Show_One_File=1 &#34;</span> Only show the tag list of current file
-<span class="nb">let</span> <span class="nv">Tlist_Exit_OnlyWindow</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; If you are the last, kill yourself
-</span><span class="s2">let Tlist_File_Fold_Auto_Close=0 &#34;</span> Fold closed other trees
-<span class="nb">let</span> <span class="nv">Tlist_Sort_Type</span><span class="o">=</span><span class="s2">&#34;name&#34;</span> <span class="s2">&#34; Order by name
-</span><span class="s2">let Tlist_WinWidth=30 &#34;</span> Set the window <span class="m">40</span> cols wide.
-<span class="nb">let</span> <span class="nv">Tlist_Close_On_Select</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34; Close the list when a item is selected
-</span><span class="s2">let Tlist_Use_SingleClick=1 &#34;</span>Go To Target By SingleClick
-<span class="nb">let</span> <span class="nv">Tlist_Use_Right_Window</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;在右侧显示
-</span><span class="s2">
-</span><span class="s2">&#34;</span>EasyComplete配置
-imap &lt;Tab&gt;   &lt;Plug&gt;EasyCompTabTrigger
-imap &lt;S-Tab&gt; &lt;Plug&gt;EasyCompShiftTabTrigger
-<span class="nb">let</span> g:pmenu_scheme <span class="o">=</span> <span class="s1">&#39;dark&#39;</span></code></pre></td></tr></table>
+</span><span class="s2">&#34;</span>PATHOGEN配置
+execute pathogen#infect<span class="o">()</span>
+filetype plugin on <span class="s2">&#34;允许插件
+</span><span class="s2">filetype plugin indent on &#34;</span>启动智能补全
+
+
+<span class="s2">&#34;nerdtree配置
+</span><span class="s2">&#34;</span>快捷键:使用F2打开关闭
+<span class="s2">&#34;map &lt;F2&gt; :NERDTreeMirror &lt;CR&gt;
+</span><span class="s2">&#34;</span>map &lt;F2&gt; :NERDTreeToggle &lt;CR&gt;   <span class="s2">&#34;开关NERDTree
+</span><span class="s2">map &lt;F2&gt; :NERDTreeTabsToggle &lt;CR&gt;   &#34;</span>开关NERDTree tab版, 需要安装vim-nerdtree-tabs插件
+<span class="s2">&#34;NERDTree配置
+</span><span class="s2">let NERDChristmasTree=1 &#34;</span>显示增强
+<span class="nb">let</span> <span class="nv">NERDTreeAutoCenter</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;自动调整焦点
+</span><span class="s2">let NERDTreeShowFiles=1 &#34;</span>显示文件
+<span class="nb">let</span> <span class="nv">NERDTreeShowLineNumbers</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;显示行号
+</span><span class="s2">let NERDTreeHightCursorline=1 &#34;</span>高亮当前文件
+<span class="nb">let</span> <span class="nv">NERDTreeShowHidden</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34;显示隐藏文件
+</span><span class="s2">let NERDTreeMinimalUI=0 &#34;</span>不显示<span class="s1">&#39;Bookmarks&#39;</span> label <span class="s1">&#39;Press ? for help&#39;</span>
+<span class="nb">let</span> <span class="nv">NERDTreeWinPos</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="s2">&#34;窗口位置在左边
+</span><span class="s2">let NERDTreeWinSize=31 &#34;</span>窗口宽度
+<span class="s2">&#34;当NERDTree为剩下的唯一窗口时自动关闭
+</span><span class="s2">autocmd bufenter * if (winnr(&#34;$&#34;) == 1 &amp;&amp; exists(&#34;</span>b:NERDTree<span class="s2">&#34;) &amp;&amp; b:NERDTree.isTabTree()) | q | endif
+</span><span class="s2">&#34;</span>打开vim时自动打开NERDTreetab
+<span class="nb">let</span> g:nerdtree_tabs_open_on_console_startup<span class="o">=</span><span class="m">0</span>
+
+<span class="s2">&#34;taglist配置信息
+</span><span class="s2">&#34;</span>打开关闭快捷键
+map &lt;silent&gt; &lt;F3&gt; :TlistToggle&lt;CR&gt;
+<span class="nb">let</span> <span class="nv">Tlist_Auto_Open</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34; Let the tag list open automatically
+</span><span class="s2">let Tlist_Auto_Update=0 &#34;</span> Update the tag list automatically
+<span class="nb">let</span> <span class="nv">Tlist_Compact_Format</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; Hide help menu
+</span><span class="s2">let Tlist_Ctags_Cmd=&#39;ctags&#39; &#34;</span> Location of ctags
+<span class="nb">let</span> <span class="nv">Tlist_Enable_Fold_Column</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34;do show folding tree
+</span><span class="s2">let Tlist_Process_File_Always=1 &#34;</span> Always process the <span class="nb">source</span> file
+<span class="nb">let</span> <span class="nv">Tlist_Show_One_File</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34; Only show the tag list of current file
+</span><span class="s2">let Tlist_Exit_OnlyWindow=1 &#34;</span> If you are the last, <span class="nb">kill</span> yourself
+<span class="nb">let</span> <span class="nv">Tlist_File_Fold_Auto_Close</span><span class="o">=</span><span class="m">0</span> <span class="s2">&#34; Fold closed other trees
+</span><span class="s2">let Tlist_Sort_Type=&#34;</span>name<span class="s2">&#34; &#34;</span> Order by name
+<span class="nb">let</span> <span class="nv">Tlist_WinWidth</span><span class="o">=</span><span class="m">30</span> <span class="s2">&#34; Set the window 40 cols wide.
+</span><span class="s2">let Tlist_Close_On_Select=0 &#34;</span> Close the list when a item is selected
+<span class="nb">let</span> <span class="nv">Tlist_Use_SingleClick</span><span class="o">=</span><span class="m">1</span> <span class="s2">&#34;Go To Target By SingleClick
+</span><span class="s2">let Tlist_Use_Right_Window=1 &#34;</span>在右侧显示
+
+<span class="s2">&#34;EasyComplete配置
+</span><span class="s2">imap &lt;Tab&gt;   &lt;Plug&gt;EasyCompTabTrigger
+</span><span class="s2">imap &lt;S-Tab&gt; &lt;Plug&gt;EasyCompShiftTabTrigger
+</span><span class="s2">let g:pmenu_scheme = &#39;dark&#39;</span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -371,9 +385,9 @@ imap &lt;S-Tab&gt; &lt;Plug&gt;EasyCompShiftTabTrigger
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/linux%E8%B0%83%E6%95%B4swap%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F/">
+        <a class="prev" href="/post/vim%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%89%AA%E5%88%87%E7%89%88/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux调整swap分区大小</span>
+            <span class="prev-text nav-default">Vim使用系统剪切版</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         <a class="next" href="/post/vim%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E5%AE%89%E8%A3%85/">

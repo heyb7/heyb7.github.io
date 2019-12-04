@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vim使用系统剪切版 - heyb7&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="heyb7" /><meta name="description" content="vim寄存器 vim 中的复制、删除的内容都会被存放到默认（未命名）寄存器中，之后可以通过粘贴操作读取默认寄存器中的内容。寄存器是完成这一过程的中转" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://heyb7.github.io/post/vim%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%89%AA%E5%88%87%E7%89%88/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Vim使用系统剪切版" />
+<meta property="og:description" content="vim寄存器 vim 中的复制、删除的内容都会被存放到默认（未命名）寄存器中，之后可以通过粘贴操作读取默认寄存器中的内容。寄存器是完成这一过程的中转" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://heyb7.github.io/post/vim%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%89%AA%E5%88%87%E7%89%88/" />
+<meta property="article:published_time" content="2019-11-10T17:18:41+08:00" />
+<meta property="article:modified_time" content="2019-11-10T17:18:41+08:00" />
+<meta itemprop="name" content="Vim使用系统剪切版">
+<meta itemprop="description" content="vim寄存器 vim 中的复制、删除的内容都会被存放到默认（未命名）寄存器中，之后可以通过粘贴操作读取默认寄存器中的内容。寄存器是完成这一过程的中转">
+
+
+<meta itemprop="datePublished" content="2019-11-10T17:18:41&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-10T17:18:41&#43;08:00" />
+<meta itemprop="wordCount" content="1560">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vim使用系统剪切版"/>
+<meta name="twitter:description" content="vim寄存器 vim 中的复制、删除的内容都会被存放到默认（未命名）寄存器中，之后可以通过粘贴操作读取默认寄存器中的内容。寄存器是完成这一过程的中转"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">heyb7</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">heyb7</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vim使用系统剪切版</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-11-10 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#vim寄存器">vim寄存器</a></li>
+<li><a href="#vim使用系统剪切板">vim使用系统剪切板</a></li>
+<li><a href="#vim绑定复制粘贴快捷键">vim绑定复制粘贴快捷键</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="vim寄存器">vim寄存器</h1>
+
+<p>vim 中的复制、删除的内容都会被存放到默认（未命名）寄存器中，之后可以通过粘贴操作读取默认寄存器中的内容。寄存器是完成这一过程的中转站，vim 支持的寄存器非常多，其中常用的有 a-zA-Z0-9+&rdquo;</p>
+
+<p>寄存器用引号来表示，在vim中，输入<code>:reg</code> 查看vim的寄存器，其中：</p>
+
+<ul>
+<li><code>&quot;0-&quot;9</code> : 表示数字寄存器，其中 &ldquo;0 缓存最近一次复制的内容. &ldquo;1到&rdquo;9 缓存最近9次的删除内容</li>
+<li><code>&quot;a-&quot;z</code> 和 <code>&quot;A-&quot;Z</code> : 表示用户寄存器，Vim 不会读写这部分寄存器</li>
+<li><code>&quot;&quot;</code> : 两个引号，表示未命名的寄存器，是 Vim 的默认寄存器，例如删除、复制等操作的内容都会被保存到这里。</li>
+<li><code>&quot;:</code> : 表示最后一次执行的命令</li>
+<li><code>&quot;%</code> : 表示当前文件名</li>
+<li><code>&quot;+</code> : 剪切板寄存器，关联系统剪切板，保存在这个寄存器中的内容可以被系统其他程序访问，也可以通过这个寄存器访问其他程序保存到剪切板中的内容。</li>
+<li><code>&quot;*</code> : 对应图形界面中鼠标框选的内容（可以用鼠标中键黏贴）</li>
+<li><code>&quot;-</code> : 行内(删除)寄存器, 缓存的是在一行的内部删除的内容, 即少于一行的删除内容</li>
+</ul>
+
+<p><strong>&ldquo;*和&rdquo;+的区别</strong></p>
+
+<p>在启用了 +clipboard 的情况下, <code>&quot;*</code> 寄存器表示的是被选择的内容. 这个内容可以是你用鼠标选择的, 也可以是你用 visual模式下选择的.
+但是, <code>&quot;+</code> 寄存器只能将你在 visual模式下 选择的内容复制到系统剪贴板上</p>
+
+<h1 id="vim使用系统剪切板">vim使用系统剪切板</h1>
+
+<p>首先查看vim是否支持剪切板：  <code>vim --version | grep clipboard</code></p>
+
+<p>结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-clipboard         +jumplist          +persistent_undo   +vartabs
++eval              +mouse_gpm         +syntax            -xterm_clipboard</pre></td></tr></table>
+</div>
+</div>
+<p>clipboard前面有一个小的减号，说明不支持。</p>
+
+<p><strong>让vim支持系统剪切板</strong></p>
+
+<p>安装<code>vim-X11</code>，可以让vim支持系统剪切板，安装vim-X11后，会安装一个vim的图形程序,即gvim, 但是这个一般都不习惯使用。(gvim也同样可以使用vim的各种插件,包括 NERDTree等)</p>
+
+<p>查看 <code>vim-X11</code> 包含那些命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ rpm -ql vim-X11
+/usr/bin/evim
+/usr/bin/gex
+/usr/bin/gview
+/usr/bin/gvim
+/usr/bin/gvimdiff
+/usr/bin/gvimtutor
+/usr/bin/vimtutor
+/usr/bin/vimx
+/usr/share/applications/gvim.desktop
+/usr/share/icons/hicolor/16x16/apps/gvim.png
+/usr/share/icons/hicolor/32x32/apps/gvim.png
+/usr/share/icons/hicolor/48x48/apps/gvim.png
+/usr/share/icons/hicolor/64x64/apps/gvim.png
+/usr/share/icons/locolor/16x16/apps/gvim.png
+/usr/share/icons/locolor/32x32/apps/gvim.png
+/usr/share/man/man1/evim.1.gz
+/usr/share/metainfo/gvim.appdata.xml</code></pre></td></tr></table>
+</div>
+</div>
+<p>vim-X11添加一些附加的命令, 比如 evim, gvim等, 最重要的是这个 vimx命令, 他就是 在vim的基础上增加x系统的支持. 即vimx 是命令行下的vim支持系统剪贴板的版本.</p>
+
+<p>查看 <code>vimx</code> 是否支持 clipboard</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ vimx --version <span class="p">|</span> grep clipboard
++clipboard         +jumplist          +persistent_undo   +vartabs
++eval              +mouse_gpm         +syntax            +xterm_clipboard</code></pre></td></tr></table>
+</div>
+</div>
+<p>可以看到，vimx是支持 clipboard的。</p>
+
+<p>为了能够在使用vim时运行的是vimx，可以给vim设置一个别名，让执行vim时实际执行的是vimx</p>
+
+<p>在.bashrc中, 加上一个 alias: <code>alias vim=/usr/bin/vimx</code></p>
+
+<p>虽然安装了 vim-X11, 但是 /usr/bin/vim 和 /usr/bin/vimx 实际上还是 两个互补相关的 应用, 在原来的vim中, 仍然并不支持 剪贴板, 查看vim &ndash;version | grep clipboard, 仍然还是没有启用剪贴板的特性。</p>
+
+<p>只有 使用 vimx 才能启用 +clipboard, 和 +xterm_clipboard 特性。</p>
+
+<h1 id="vim绑定复制粘贴快捷键">vim绑定复制粘贴快捷键</h1>
+
+<p>不使用快捷键的时候，复制和粘贴需要使用命令</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">复制</th>
+<th align="center">粘贴</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>&quot;+y</code></td>
+<td align="center"><code>&quot;+p</code> 或者 <code>&quot;+gp</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>为了方便使用，可以把复制粘贴命令绑定到快捷键上</p>
+
+<p>在vim中有以下几种按键绑定的模式：</p>
+
+<ul>
+<li><code>map</code>   : 正常模式，可视化模式和运算符模式可用</li>
+<li><code>nmap</code> ：正常模式可用</li>
+<li><code>vmap</code> ：可视化模式可用</li>
+<li><code>omap</code> ：运算符模式可用</li>
+<li><code>map!</code> ：插入模式和命令行模式可用</li>
+<li><code>imap</code> ：插入模式可用</li>
+<li><code>cmap</code> ：命令行模式可用</li>
+</ul>
+
+<p>在设置快捷键的时候，需要注意映射模式：</p>
+
+<ul>
+<li>如果是复制到系统剪贴板, 要设置vmap, 或者是设置成 map。 !! 因为, 你要复制到系统剪贴板, 需要在visual模式下, 你用nmap在normal模式下就无效. 其中的map 会自动检查, 在vmap下有效, 在nmap下无效!</li>
+<li>反之, 如果是从系统剪贴板粘贴到vim中, 则要设置成 在nmap下粘贴, 或者甚至可以在 insert模式下直接粘贴. 但是不能设置成vmap, 因为你在 粘贴 系统剪贴板的内容到vim的时候, 不可能是vmap visual模式. 通常还是normal模式或 insert模式</li>
+</ul>
+
+<p><strong>在 ~/.vimrc中绑定快捷键</strong></p>
+
+<p>可以把复制绑定成 ctrl c，粘贴绑定成 ctrl v，但是ctrl v和可视化模式的 ctrl v冲突了，所以可以选择使用其它的快捷键，这里使用前置键来配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s2">&#34;绑定复制/粘贴快捷键
+</span><span class="s2">let mapleader=&#34;</span><span class="p">;</span><span class="s2">&#34;
+</span><span class="s2">vmap &lt;leader&gt;c &#34;</span>+y
+
+nmap &lt;leader&gt;v <span class="s2">&#34;+p
+</span><span class="s2">imap &lt;leader&gt;v &lt;esc&gt;&#34;</span>+p</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">heyb7</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-11-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/linux%E8%B0%83%E6%95%B4swap%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux调整swap分区大小</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/vim%E9%85%8D%E7%BD%AE/">
+            <span class="next-text nav-default">Vim配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://heyb7.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">heyb7</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
